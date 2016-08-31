@@ -1,0 +1,1362 @@
+ JavaScript第一天
+
+qq：356528689
+
+手机号码：18653500102
+
+ 万网域名注册
+
+建站流程：
+1.选一台服务器设备->运行操作系统->web服务器（Apache、Tomcat）
+2.通过地址访问 地址组成：协议（http协议） + 域名（ip地址{ww.marrymin.com}）+ 端口(80默认)+ 子路径
+3.把你写的网站上传到服务器。
+
+
+回顾：HTML + CSS
+
+
+一、javascript（ECMAScrip+DOM+BOM）脚本（弱类型语言）弱类型并不代表没有类型。
+
+1、弱类型语言
+
+ECMA:组织，定义语言规范。
+
+DOM:文档对象模型。
+
+BOM:浏览器和js之间的联系,浏览器对象模型。
+
+int value1;
+float value2;
+char* value3;
+
+var value;//value是一个变量。
+var value2=1.1;//value2是一个number（float）类型变量。
+var value3="字符串";//value3是一个字符串类型变量；
+
+
+2、如何使用JAVAScript
+
+IDE工具->HBuilder-->介绍工具-->新建第一个项目
+
+script标签 js代码片段写在此标签中
+
+script脚本会在浏览器解析文档内容时，顺次执行。
+
+JS调试 --》 在浏览器中打开JS控制台--》chorme/safari/firefox火狐（王景修改）/ie(浏览器核心,webkit)--》log输出--》console.log（内容）；
+
+3、JavaScript的基本类型
+
+undefined --》声明了变量但是未赋值
+
+null    --》对象地址为空
+
+Boolean 
+
+Number (int/float)
+
+string
+
+引用类型（Object对象）
+
+NaN not a number (非数值类型)
+
+        数字加上   + 或 tostring  转化成字符串
+
+Number :
+       undefine -->NaN
+
+       字符--》NaN
+
+       布尔--》0和1
+
+       数值--》数值
+
+       字符串（数值、字符）--》	NaN
+                           --》0xf 十六进制的字符串直转化为十进制。
+
+
+       对象--》先调用valueof再进行相应转化。
+
+parselnt（）/parseFloat():
+ 
+        undefine -->NaN(0 浏览器的差异)
+
+        字符--》NaN
+
+        布尔-->0和1
+
+        数值--》数值
+
+     字符串（数值，字符）--》左起第一个数值类字符开始，到非数字类字符结束，忽略空格（左起的空格忽略）。
+
+
+str.length字符串长度
+typeof字符串类型
+
+
+作业：
+     打印菱形 n行
+
+     打印9*9乘法表（log）
+
+
+JavaScript第二天
+
+  w3c 官网
+ 
+昨天回顾：
+1、Javascript弱类型语言（脚本）
+2、Javascript在文档中的使用
+3、Javascript基本类型
+
+昨天作业：
+  
+    打印菱形；
+
+
+今天课程：
+
+1、Javascript函数
+
+本质上是一个指针
+
+
+a、函数的声明定义
+
+function 函数名（参数）{
+      函数体
+     （如果有返回值，直接return）  
+}
+
+b、函数表达式
+
+
+
+
+2、对象（Object）
+
+类--》将数据属性和函数属性封装在一起的数据结构。
+
+对象--》属于某个类，具有唯一性的实例。
+
+
+Object 定义对象
+
+a、使用new关键字定义对象（使用 . 对特定对象添加数据属性和函数属性）
+
+b、使用对象字面量定义{name：xxx，function：xxx}
+
+
+
+3、字符串常用方法
+
+3.1、根据位置返回特定的字符（单字符 字符串，无char类型）
+charAT（）/下标法  {使用下标法时，低版本的IE浏览器不支持需要注意}
+
+
+  slice（）/subString()相似  根据位置返回特定的字符串
+
+         参数1 起始位置 参数2 索引值的前一位
+  
+
+  subStr 参数1 起始位置  参数2 返回字符串的长度
+
+
+   区别在于负数参数
+                    参数一       参数二
+
+   slice（）        加长度       加长度
+
+   subString（）    置0            置0（显示整个字符串）
+
+   subStr（）      加长度          置0（显示为空，没有任何字符）
+
+3.2、根据字符串返回特定的位置
+
+查到返回索引，查不到返回-1
+
+                   参数一           参数二
+
+indexOf（）     查找的字符串     查找的起始位置
+
+lastindexOf（）查找的字符串      查找的起始位置  区别在于由后往前找
+
+
+3.3 大小写转换
+ toUpperCase()  转大写
+ toLowerCase（） 转小写
+  
+3.4.字符串拼接
+
+ a. 使用 + 拼接
+ b.concat（）参数 待拼接的串
+
+3.5.字符串的比较
+
+A.localeCompar（B）  -1 ---》A在前，B在后
+
+                     0  ---》AB相等
+
+                     1  ---》B在前，A在后
+补充：
+
+1、CSS Sprite（雪碧图）
+
+
+对应每一个类选择器
+background-image
+background-repeat
+
+
+
+对应每一个具体的元素
+background-position
+
+
+
+
+2、display和 visibility
+
+display none 元素不可见，不占文档空间
+
+visibility  visible   元素可见，占文档空间（默认值）
+            hidden    元素不可见，占文档空间。
+
+
+作业：
+   
+     1.查找一个原始串中某目标串的个数（设计一个函数）
+     2.打印出起始和结束位置。
+  
+charAT（）   获取特定字符
+charCodeAT   获取特定字符编码
+
+
+
+Javascript 第三天
+
+昨天回顾 ：函数，对象，字符串常用方法，Css Sprite和标签隐藏
+
+今天课程：
+
+1.javascript的数据类型和内存管理
+
+a、数据类型
+
+undefine、null、boolean、Number、string  值类型
+
+Object Array数组、Date.....             引用类型
+
+i.函数——》函数参数的传递  值类型
+ii：==（值相同就为真）和 === （值相同且类型相同为真）
+iii：undefine和null  undefined代表值类型，null代表引用类型
+
+b、内存管理
+
+i、标记法清除  大部分浏览器厂商都用标记法清除
+
+
+ii、引用计数器  循环引用--》容易造成内存泄露  
+ --》解决方法   手动将对象A置为null
+
+2.javascript函数、匿名函数和闭包
+
+a、script html文档流解析是按块解析的
+
+    属性 defer 延迟脚本执行 等dom文档全部解析完
+    属性 async  脚本异步执行
+
+    javascript解析器会先解析函数声明，使其在执行其他代码之前可以被使用；而函数表达式只会在解析器解析到其所在位置时可以被使用。
+
+b、匿名函数和闭包
+
+javascript变量作用域：全局变量和局部变量（函数内）
+
+
+闭包：跨作用域访问变量，比如：局部函数中变量在全局环境中被访问。
+
+3.javacript函数的arguments对象和this对象
+
+a、可以通过下标访问函数参数
+   arguments[0], arguments[1],.....
+
+   arguments对象属性length，传入参数的个数
+
+b、this对象 
+
+  指向当前的作用域对象
+
+字符串函数--》replace（）
+
+
+
+
+明天：
+   array、date、math....
+
+javascript第四天
+
+1、Array对象
+
+a、初始化
+   i、字面量初始化
+  ii、构造方法初始化
+
+  读取数组的元素使用下标法 
+
+ 
+b、length属性
+
+即可读也可写，可以通过写，对数组扩充和删减。
+
+c、数组和字符串的转化
+
+ i、数组--》字符串  tostring()/join()
+   tostring   使用，拼接字符串
+   join（）   使用自定义的分隔符拼接
+
+ ii、字符串--》数组   split（）
+              参数一           参数二
+
+  split（）  分割符         元素个数上限
+
+d、数组对象常用方法
+   i、
+   push（）在数组的最后压入元素，返回数组元素个数
+   pop（） 在数组的最后推出元素，返回被推出的元素
+   shif（）在数组的首位置推出元素，返回的是被推出的元素
+  unshif（）在数组的首位置压入元素，返回的数组元素个数
+
+  slice（）从参数1开始，到参数2的前一位结束，提取子元素  
+
+  concat（）在数组的尾部拼接新元素，返回的是新数组，而原数组不变
+ 
+                  参数一     参数二     参数三......
+  splice（）     起始位置   元素个数    插入的新元素
+                 返回值是被删除的元素
+
+  ii、
+根据元素查找位置，和字符串使用一致
+   indexof（）/lastindexof()
+
+
+  iii、
+传入函数  参数一（数组的项）参数二（数组项的索引）参数三（数组本身）
+
+  every()     全真为真
+  
+  filter()    过滤掉不符合条件的元素，返回的是符合条件的元素数组。
+ 
+  some()      有真则真
+
+  forEach()  执行某种特定操作，无返回值。
+  
+传入函数  参数一（前一项）  参数二（当前项） 参数三 （当前项的索引参） 数四（数组本身）
+
+ reduce()运行函数，执行特定操作，一次传入两个元素，由左到右顺序
+
+ reduceRight()运行函数，执行特定操作，一次传入两个元素，由右到左顺序
+
+
+
+2、Date对象
+
+
+i、初始化对象
+
+ var nowDate = new Date();
+
+ii、获取UTC时间 Date.UTC（）/Date.parse（字符串）
+
+   初始化的时候，传入UTC格式 Date（Date.UTC()）；
+   初始化的时候，传入字符串  Date（"2016/8/11 1:1:1"）；
+
+iii、通过时间戳获取时间
+
+  初始化的时候，传入Number    Date（360*24*30*30*1000）；
+  
+   时间对象--》时间戳  Date.parse（dateOject）；
+
+iiii、将时间对象转化为字符串
+
+   tostring()/toDatestring()/toLocalDatestrin()  /totimestring()/tolocaltimestring()
+
+3、Math对象
+
+  Math.abs() 绝对值
+  Math.pow（A.B）指数  A的B次幂
+  Math.min()/max() 取最小、最大值
+  Math.PI         π
+  Math.random  0-1间的随机数
+  
+
+4、初始Dom（文档对象模型）
+ 
+  HTML文档和JS交互 通过Dom  （document入口对象）
+  
+ Dom就是对文档抽象出来的树形结构，Dom树
+
+
+明天安排：
+
+  dom类型介绍， 小测试
+
+作业：1、字符串数组：选出来最长的串。
+      2、HelloWelcomeZhaoLanYuan 拆分成单词 （单词首字母大写）
+      3、HelloWelcomeZhaoLanYuan（小写）  设计函数，传入字符串，返回次数最多的字母以及次数组成的字符串
+
+
+javascript第六天
+
+上周知识点总结：
+
+    数据类型
+    对象 -->函数
+
+
+
+上周JS测试
+
+
+
+今天课程安排：
+	
+  1.类（新版ECMAScript）
+
+forin 可以通过forin语句，遍历对象属性 。
+   
+Array、Dare......
+
+Function
+
+1.1 通过Object的create（）方法，模拟父子对象、继承。
+ 
+   prototype属性指向了当前对象的原型（父对象）
+
+1.2函数 
+  
+  模拟父子类、继承
+
+  //类
+function Cat（age，eyes）{
+      this.age=age;
+      this.eyes=eyes;
+}
+
+//对象
+var cat = new Cat（）
+
+
+
+  2、DOM（文档对象模型）DOM树，动态的树结构 
+
+  <a href =xxx >百度</a>
+
+   <a>   -->  标签名
+   百度  --》 标签值
+   href  --》 属性名
+   xxx   --》 属性值
+
+  2.1   Node类型
+
+   nodeType    节点类型
+   nodeName    节点名（标签名）
+   nodeValue   节点值
+  childNodes   子节点
+   
+  2.2 Document类型
+ 
+   document对象  -->  HTMLDocument  -->    Document类
+  （文档入口对象）    
+
+   getElementById(id);               返回Element对象
+   getElementsByTagName（tagName）;返回HTMLCollection对象
+   
+    对于HTMLCollection对象，使用[]，传入数字时调用item（），传入字符串时调用namedltem（）。namedltem（）先检索DOm树中有没有相同id的元素，有返回此元素；没有则检索有没有相同name的元素，有则返回元素，如果说有多个元素相同，则先检索到谁返回谁。如果没有符合条件的元素，返回undefined。
+       
+
+
+
+
+  2.3 Element类型 （元素类型）
+   
+    nodeName/tagName（获取字符大小写可能不同）
+    id
+    className
+    innerText     元素文本（标签值）
+    
+    getAttribute（）   获取属性（不区分大小写）
+    setAtrributr（）   设置属性
+
+  2.4  TextNode类型
+
+     文本
+
+
+作业：20160815_小明.zip
+ 
+    1.定义一个类，两个数据属性半径r，高h，一个函数，求v。
+
+    2.div 400*400 屏幕中央 每次刷新页面，页面中间都会出现1-6的不同数字。 
+	
+tagName    元素节点的名称
+  
+innerHTML  得到标签之间的内容
+
+不支持自定义属性（ie9之下的浏览器支持，其他都不支持。）
+
+以下两个语法效果一样：
+
+   document.body.item(0);
+   document.body[0];  
+   node就是节点的意思
+
+
+Javascript第七天
+
+
+DOM树是动态的
+
+<noscript> 当前环境不支持脚本 或者 您去设置中打开脚本</noscript>
+
+
+1.Node
+
+
+ childNodes       子节点
+
+ hasChildNodes（）是否有子节点
+ 
+ appendChild（）  添加节点，参数传入新节点
+
+ removeChild（）  移除节点，参数传入旧节点
+
+ insertBefore（） 插入节点，参数一  --》 新节点
+                            参数二  --》 位置参考节点
+
+ replaceChild（） 替换节点，参数一  --》  新节点
+                            参数二  --》  旧节点
+
+ 
+
+2.Document 类型
+
+ getElementsByClassName（）  通过类名获取元素
+ getElementsByName（）       通过name属性获取元素
+
+ 传入参数为选择器语法的选择方法
+ querySelector()     第一个元素
+ querySelectorAll    所有的元素
+
+ createElement（）    创建节点元素，参数为标签名
+ createTextNode（）   创建文本节点，参数为文本内容
+
+
+
+
+
+
+3.Elementleix
+
+     使用Element元素继续检索元素，缩小了检索的范围：querSelectorxxxx方法支持链式查询。
+
+
+ querySelector()     
+ querySelectorAll    
+
+
+4.Text类型
+
+标签值为非空字符串 即存在文本节点
+
+splitText（分割位置）         分割文本节点
+
+normalize（）                 拼接文本节点（父节点调用）
+
+appendData（追加的串）        追加文本内容到当前节点
+
+deleData（起始位置，删除个数）删除文本内容
+
+replaData（起始位置，删除个数，替换的字符）
+     
+     --》        将特定位置的文本替换成传入的文本
+
+insertData(起始位置，插入的文本)将文本插入到特定位置
+
+5.动态添加脚本
+
+  创建script元素（Element类型），添加到文档即可。
+
+  script.setAttribute（“src”，“xxxx”）
+       
+  xxxx是脚本的相对路径或者是绝对路径。
+
+
+6.事件
+
+   鼠标单击事件（左键）
+
+   click事件就是单击事件，元素都有属性onclick可进行点击响应设置
+
+
+作业：
+
+
+一、事件和事件流
+
+  事件：文档或浏览器窗口发生的可以被监听响应的行为。
+	观察者模式（对事件的监听）；
+
+  事件流：从页面中接受并传递事件的流程顺序。
+
+  网景：从Dom树最顶端一直向 Dom叔最深层传递事件，叫捕获。(window->监听元-
+
+  IE:从Dom树最深层一直向DOM树最 顶端传递事件，叫冒泡（监听元素---〉window)
+
+    DOM事件流:a、捕获阶段   b、目标阶段   c、冒泡阶段。
+
+二、事件响应和事件对象
+
+事件的响应添加：
+
+1.使用事件类型同名的标签属性    (on +事件类型）
+
+    onclick          标签单击属性
+
+   ondblclick        标签双击属性
+
+    使用函数调用或者Js代码片段对属性赋值
+	Onclick=”function()”
+	Onclick=”JS代码”;
+
+    类似onclick后跟的是函数的调用，如buttonClick(),而不是指向buttonClick
+
+2.通过js访问事件响应属性（onclick、onblclick)
+
+使用形式：
+Element.onclick=function(){}
+Element.onclick=null;  //删除响应，切断建立的链接。
+    
+3、使用Dom2定义的事件响应方法
+
+   存在浏览器兼容问题
+
+addEventlistenser(参数1，参数2，参数3）
+
+参数1-----事件类型
+
+参数2-----事件响应函数
+
+参数3-----是否捕获（true是捕获传递，false是冒泡传递）
+
+removeEventlistenser(参数1，参数2，参数3）
+
+参数1-----事件类型
+
+参数2-----事件响应函数
+
+参数3-----是否捕获（true是捕获传递，false是冒泡传递）
+
+注意：使用匿名函数无法删除响应
+ 
+  IE添加、删除响应
+  attachEvent（）/detachEvent（）
+
+
+
+
+事件的对象：（Event）
+
+  事件是浏览器自动传入的
+
+  type              事件类型
+  clientX/clientY   客户端坐标
+  pageX/pageY       网页坐标
+
+  currentTaget      响应函数绑定的元素
+  target            事件目标元素
+  button            鼠标按键
+  bubbles           是否为冒泡
+   
+
+三、事件类型
+
+
+Javascript第九天
+
+
+ 1、样式表设置的top、left，在DOM中不能直接使用
+ 2、保证鼠标坐标点和元素左上角坐标点差值常量
+ 3、设置flag = false的临界点。
+
+今天课程：
+  
+   1、事件对象和事件类型
+
+  Event  对象--》数据属性和函数属性
+
+  preventDefault（）  阻止了默认行为
+
+  事件类型：
+ 
+ 鼠标事件
+  click    单击
+ dblclick  双击
+ mouseup
+ mousedown
+ mouseover   在元素上，响应一次
+ mousemove   在元素上移动
+ mouseout    从元素内移到元素外
+ 
+
+ UI事件
+
+ load        页面加载完毕
+
+ unload      页面卸载完毕
+
+ select      选择文本（input、textarea）
+
+ blur        失去焦点  
+ 
+ focus       获得焦点
+
+ 键盘事件
+ 
+ keydown    按键按下
+
+ keyup      按键抬起
+
+ keypress   按键完成一次按键动作
+ 
+ altkey/controlkey/shifkey.....符合按键属性
+
+
+  2、BOM（浏览器对象模型）
+
+ window对象，BOM核心
+
+ 1.全局对象
+ 
+ 添加到window对象中
+  
+ 2.window.open
+
+ 参数1   URL地址
+ 参数2   打开属性（本页、新页、框架）
+ 参数3   特征字符串
+ 参数4   是否替换历史记录
+
+ 3.alert()/comfirm()/prompt()
+           是  否||| 输入信息
+          
+  confirm有返回值  true/false
+
+  prompt           返回文本
+
+  4.location对象
+
+  href       链接地址
+  host       服务器地址和端口
+  hostname   服务器地址
+  protocol   协议
+ 
+ 
+  search     URL查询字符串（Get方式的参数）页面之间传参
+
+ 5.history对象
+ 
+   go（-1）返回  
+   go（1） 前进
+
+  back（） 返回
+  forward  前进
+
+
+ Javascript第十天
+
+ 微信打飞机
+
+ 1、游戏引擎 --》定时的控制游戏流程
+
+ 2、我方战机，敌机，子弹
+
+ 3、积分系统 
+
+ 
+  断点调试（breakpoint）
+
+  执行到下一个断点
+  一步步往下执行
+  一步步往下执行但是可以进入函数内部
+
+
+带长度单位，属性可读可写
+ style.left
+ style.top
+ style.width
+ style.heigh
+
+纯数值，属性可读不可写
+ offsetleft
+ offsetTop
+ offsetWidth
+ offsetHeight
+
+children 解决子节点空白问题
+
+
+contains  判断一个节点是不是另一个节点的后代
+
+
+Javascript 第十一天
+
+今天课程：
+ 
+  1、this对象
+
+  代表对象（1、执行时的对象；2、对象不明确，代表window）
+
+  用到什么位置：函数（对象、类）
+
+  匿名函数对象不明确（通常不明确就是指window）
+
+  2、定时器
+
+   setInterval    间隔某个时间循环执行某个函数
+   
+    参数一 执行函数（也可以是一段Javascript代码）
+    参数二 事件间隔
+    参数三 传入的参数
+    返回值  定时器对象
+
+    clearInterval  终止Interval定时器
+    参数一 定时器对象
+
+
+
+   setTimeout（）  延迟某个时间执行某个函数
+   参数一  执行函数
+   参数二  延迟函数
+   参数三  传入参数
+   返回值  定时器对象
+
+   clearTimeout（） 终止Timeout对象
+   参数一  定时器对象
+
+ 递归思想：1、调用函数本身
+           2、找好临界条件
+
+   function f（num）{
+        
+        if(num>1){
+        return num*f（num-1）；
+        }else{
+            return 1；
+           }
+    }
+  
+ 使用setTimeout()实现setinterval()功能。
+
+
+
+
+  3、正则表达式
+
+   3.1 正则表达式语法
+   3.2 正则表达式在javascript中的使用。
+  
+ 元字符（字符串中使用，需要用转译字符。\） 
+
+    ^  代表字符串开始
+
+    $  代表字符串结束
+
+    *  代表字符任意次数
+
+    +   代表字符至少一次
+
+    ?   代表字符最多一次
+
+    {}  代表字符重复次数的范围
+   {2}      2次
+   {2，}    2次及以上
+   {2,5}    2-5次
+
+    |     代表或，如a|b，是指a或者b
+
+    .      代表任意字符
+
+    []      代表某些字符在字符串特定位置出现
+         配合使用- 连接符
+
+   
+
+作业：
+
+1、求斐波那切数列set
+ 
+2、html，倒计时。
+
+
+
+Javascript 第十二天
+
+  1、正则表达式
+
+  [^] 相反       等效[^0-9]    非数字字符 
+
+  \d             等效[0-9]     数字
+
+  \D  非数字     等效[^0-9]    有非数字的东西存在就是真
+
+  \w  单词字符   字母、数字、下划线 (_)
+
+  \W  非单词字符 和\w相反
+
+  在javascript在使用正则表达式：
+       正则表达式对象 （RegExp）
+
+  a、字面量形式
+     var reg = /表达式语法/模式；
+     模式：g  代表全局匹配（默认就是不写的时候是非全局）
+           i  大小写不敏感  insenstive
+           m  多行模式 （mutily line）
+
+  b、RegExp对象构造方法
+ 
+   var reg = new RegExp(参数一，参数二)；
+   参数一  正则表达式语法字符串
+   参数二  模式字符串
+ 
+var reg = /adc/;
+var str = "hello word"
+
+   test（）     reg.test(str);正则对象的方法，传参为字符串，返回值为布尔值，匹配到返回true，匹配失败为flase
+
+   search()    str.search(reg) 字符串方法。传入字符串或正则对象，返回值为第一次匹配到字符串起始索引或-1（-1代表没有匹配到）
+   
+
+   match()  str.match(reg) 字符串方法，传入正则对象，返回数组。非全局匹配时，返回第一匹配项，index（匹配项开始位置索引），input（原串的引用），length数组长度。
+
+   exec()   reg.exec(str)  正则对象方法，在非全局匹配模式下与match（）相同，在全局匹配模式下返回详细匹配信息
+  
+  replace() 可以传入正则对象
+
+  split()   可以传入正则对象
+ 
+
+  2、bug调试
+
+  a、会打断点（断点：程序执行到该位置，处于挂起状态，暂停状态）
+  
+  b、断点时，将鼠标指针移到相应变量上，可以弹出变量的详细信息。
+
+  c、断点时，代码中无此变量，想查看需要在控制台输入，再按回车。
+
+
+  3、滑动门效果
+
+   mouseover -->display -->none/block
+   
+  4、轮播图
+
+
+
+
+
+
+作业：
+ 1、xxx@xx.xxx.xx(点个数不定) 输入字符串，判断是不是邮箱。 input --》type text
+
+ 2、动态判断输入的文本是不是有效数字。（计算器输入判断）
+
+
+
+
+javascript 第十三天
+
+1、正则表达式转义
+
+  原串      双引号内容     正则字面量     正则构造方法
+
+   abc        "abc "          /abc/      new RegEx("abc")
+ 
+   [ab]c       [ab]c          \[ab\]c        \\[ab\\]c
+
+   abc/def      abc/def       abc\/def        abc\\/def
+
+  \ab\cd        \\ab\\cd      \\ab\\cd      \\\\ab\\\\cd
+
+
+2、轮播图
+
+   定时器  自动完成轮播   setInterval/setTimeout
+    
+   3张图 --》 左右排列 
+
+  element.style.left  (element.offsetLeft)  改变位置 
+
+
+
+3、浏览器能力检测
+
+ a、浏览器检测
+
+  BOM --> window --> navigator (用于检测浏览器类型)
+
+  userAgent(用户代理字符串) --》可用于检测浏览器内核及浏览器名称
+
+    Chrome  --》  WebKit(开源) 
+    Safari  --》  Webkit
+    IE      --》  Trident
+    Firefox --》  Gecko
+    Opera   --》  Gecko（window.Opera）
+  
+  设备检测： 
+   iOs      -->   WeKit
+   Android  -->   WebKit
+
+ 正则表达式判断！！！
+
+
+ b、能力检测
+
+  检测属性 --》if （object.属性）{  }
+
+  
+
+  检测函数 --》 if (typeof object 方法 == function){  }
+
+
+  throw  new  Error(异常信息)：
+
+   try{  }catch(error){  }
+
+
+作业：
+
+ 轮播图加按钮功能
+
+
+  *当全局变量和局部变量同名时，全局变量无效。
+
+   Function内部有prototype属性，该函数含有call()和apply()两个方法.
+
+  prototype属性：向对象来添加属性。
+
+  if、for循环语句下的大括号不属于作用域。
+
+    
+Javascript 第十四天
+
+
+ 1、完整版轮播图
+
+  昨天的算法：一次移动1px，对800取余肯定有为0，为0就是移动的临界点。
+
+
+  今天的算法：极限
+     0-800之间 无限的二分下去，到达浏览器精度极限时，默认值为800。
+
+
+ 2、网络
+
+ 七层网络结构
+
+  应用层  http、https、SMTP/POP3邮件协议、FTP/SFTP
+
+  
+  表示层  
+  会话层
+   数据传输安全、链接管理 （在五层网络结构中这两层归在了应用层）
+
+  传输层  传输数据 TCP、UDP
+
+  网络层  网络协议 IPV4/IPV6
+
+  数据链路层  建立、维护、断开物理链接
+
+  物理层   电缆 光纤 
+  
+  TCP/UDP
+
+ 1、TCP基于链接，UDP不基于链接。
+ 2、TCP安全，UDP相对不安全，容易丢包。（数据传输）
+ 3、TCP传输效率低，UDP高。（传输效率）
+ 
+
+ http-tcp 三次握手
+  1、客户端向服务端发送确认信息，等待确认。（syn数据包）
+  2、服务端确认信息，向客户端返回确认信息。
+  3、客户端收到服务端的确认信息，连接建立。
+
+
+
+
+Javascript 第十六天
+
+上周回顾：
+
+  this关键词
+   定时器
+   正则表达式
+   滑动门效果
+   轮播图效果
+  
+   
+
+今天课程：
+
+
+1、小米官网
+
+  a、根据设计稿，切网站（颜色、距离、素材）
+  b、搭框架（文档中需要那些结构标签）
+     符合标签语义、简洁、可读性、可扩展性
+   
+  c、细节实现（css/JS）
+  
+
+  css3 过渡效果
+      transition (过渡属性，简写)
+
+      transition-delay  过度效果时间前延迟时间（秒）
+
+      transition-duration   过渡效果持续的时间（秒）
+ 
+       transition-property   过渡效果作用的属性
+
+       transition-timing-function 过渡方式（easy/easy-in/easy-out/easy-in-out/linear）
+
+
+   浏览器差异 （在CSS里使用需要加前缀）
+    -webkit-   chrome/safari
+    -moz-       fireox
+    -o-         opera
+
+
+
+
+2、JSON数据（Javascript object Notation）
+
+JSON数据基本类型：
+   数值型    （number）       1,2,3,.......
+   布尔型    （Boolean）      true false
+   字符串    （string）       “helloworld”      双引号
+   数组      （Array）         [value1，value2]   中括号
+   对象      （Object）        {}                 大括号    
+   空        （Null）          无值               
+
+   ，  逗号 数组的元素之间，对象的元素之间使用逗号隔开 
+
+   ：  冒号 对象的元素key-value，key和value之间使用冒号隔开
+  
+   
+   在JavaScript中，JSON是一个类（对象 Arrqy，String）
+
+   a、JSON.stringify() 将JS对象转化为JSON字符串 （序列化）
+       返回值     json字符串
+       参数1       待转化的对象（object）       
+       参数2       
+
+       参数3     传入数字或者字符用于json格式的缩进
+
+   b、JSON.parse（）将json字符串转化为JS对象  （解析、反序列化）
+   返回值       JS对象
+
+   参数一        待解析的JSON字符串
+   参数二
+   参数三
+
+JavaScript 第十七天
+
+
+1、Http网络请求方式Get/Post
+
+   Http协议规范定义了几种数据请求方式  Get/Post/Put/Delet..
+   
+   协议规范：
+
+   1、http协议里规定Get一般用于不做服务器数据修改的请求，而Post一般用于服务器数据修改的请求。（增删改  查）
+
+
+   约定俗称：
+
+   2、get一般将参数拼接到URL后面，Post一般将数据放入body中
+   3、因为URL有大小限制，所以Get方式参数容量很小，而post一般无此限制。
+   4、Get安全性较低、Post相对较高。
+
+2、初识Ajax（Asynchronous JavaScript And XML）
+
+   HTML --》XHTML --》 XML
+服务器焦交互数据（JSON、XML数据）
+
+ Ajax：客户端向服务器请求和发送数据的JavaScript原生技术。
+
+ 同步、异步：
+ 
+  开始 --》事件A --》 事件B --》结束
+
+  开始 --》事件A --》结束
+       --》事件B --》
+
+ 在JavaScript使用Ajax，需要使用XMLHttpRequest类：
+
+   1、创建Ajax对象
+   2、准备好请求对象 open（参数一，参数二，参数三）
+       参数一     http请求的方式
+       参数二     URL地址
+       参数三     同异步（true异步  false同步）
+   3、 发送请求    send（参数1）
+       参数一  向服务器传递的参数，没有填null
+   4、如果是异步请求，需要在send之前添加readyStatechange事件响应
+
+ XMLHttpRequest对象重点属性：
+
+    readystatechange XMLHttpRequest状态改变时回调
+
+    readystate       XMLHttpRequest对象的状态编码
+
+         0  刚初始化对象，还没调用open方法。
+        
+         1  启动、准备（已经调用完open，但是还未调send）
+
+         2  发送（调完send方法，但是还未收到返回数据）
+
+         3  接受数据（开始接受部分数据）
+
+         4  完成（接收到服务器返回的所有数据）
+
+    responseText 服务器返回的字符串数据（JSON、XML）
+    
+    status       http状态码
+
+    200 成功      
+    404 资源丢失
+    
+
+    abort（）在请求未完成之前终止请求（方法）
+
+
+  //一般情况下，网页中使用Javascript通过Ajax访问Http网络请求，默认是不允许跨源访问的！
+
+   CORS --》Cross-Origin-sharing 跨域资源共享
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
