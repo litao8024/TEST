@@ -1,0 +1,23 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+#box{
+	margin: 0 auto;
+	/*height: 600px;*/
+	width: 800px;
+	position: relative;
+}
+#fcan{
+	position: absolute;
+	top: 0;
+	z-index: 1;
+}
+#bg{
+	position: absolute;
+	top: 0;
+}
+#bg img{
+	width: 800px;
+	height: 600px;
+}
