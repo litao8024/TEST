@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	<style type="text/css">
+		
+		#mycanvas{
+			display: block;
+			margin: 50px auto;
+			border: 1px solid green;
+		}
+		
+		
+	</style>
+	</head>
+	<body>
+		
+		<canvas id="mycanvas" width="800" height="620"></canvas>
+		<script type="text/javascript">
+		var q = 0;
+		var ratote = function (){
+	
+			var angle = Math.PI;
+			var canvas= document.querySelector("#mycanvas");
+			var context = canvas.getContext("2d");
+			
+			context.save();
+			context.clearRect(0,0,canvas.width,canvas.height);
+		    context.translate(400,300);
+		    q += angle / 36;
+		    context.rotate(q);
+		    
+		    context.beginPath();
+			context.strokeStyle = "black";
+			context.lineWidth = 5;
+			context.beginPath();
+			context.arc(0,0,300,angle/2,angle*(3/2),false);
+			context.stroke();
+//			
+			context.strokeStyle = "black";
+			context.lineWidth = 5;
+			context.beginPath();
+			context.arc(0,0,300,angle/2,angle*(3/2),true);
+			context.fillStyle = "#000000";
+			context.fill();
+			context.stroke();
+//			
+			context.beginPath();
+////			context.moveTo(400,0);
+			context.arc(0,-150,150,angle/2,angle*(3/2),false);
+			context.fillStyle = "#000000";
+			context.fill()
+			context.stroke();
+//			context.moveTo(400,600);
+			context.beginPath();
+			context.arc(0,150,150,angle/2,angle*(3/2),true);
+			context.fillStyle = "white";
+			context.fill();
+			context.stroke();
+//			
+			context.beginPath();
+//			context.moveTo(400,150);
+			context.arc(0,-150,15,0,360,false);
+			context.fillStyle = "white";
+			context.fill();
+			context.stroke();
+			
+			
+			context.beginPath();
+//			context.moveTo(400,450);
+			context.arc(0,150,10,0,360,false);
+			context.fillStyle = "#000000";
+			context.fill();
+			context.stroke();
+			context.closePath();
+			context.restore();
+		}	
+		
+		function adc(){
+			ratote();
+			setInterval(ratote,20);
+		}
+		adc();
+			
+		</script>
+		
+	</body>
+</html>

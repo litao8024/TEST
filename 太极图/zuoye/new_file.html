@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<!DOCTYPE>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Canvas绘制旋转太极</title>
+</head>
+<body>
+    <canvas id="face" width="200" height="200"></canvas>
+</body>
+</html>
+ 
+<script type="text/javascript">
+	
+
+var canvas = document.getElementById("face");
+var cxt = canvas.getContext('2d');
+var r = 100;   //半径
+var pointX = 0;  //圆心x坐标
+var pointY = 0; //圆心y坐标
+
+ // 绘制扇形填充
+ function pie (g,radius,startAngle,endAngle,color,x,y) 
+ {
+     g.fillStyle = color;
+     g.beginPath();
+     g.arc(x,y,radius,startAngle,endAngle,true);
+     g.closePath();
+     g.fill();
+ }
+
+ var q = 0;
+ function redrawTaiji()
+ {
+     // 保存状态
+     cxt.save();
+     // 清理图像
+     cxt.clearRect(0,0,canvas.width,canvas.height);
+     cxt.translate(100,100);
+     q += Math.PI / 6;
+     cxt.rotate(q);
+     cxt.beginPath();
+     // 绘制两个最大圆
+     pie(cxt,r,3/4*Math.PI*2,5/4*Math.PI*2,"#FF072A",pointX,pointY);
+     pie(cxt,r,1/4*Math.PI*2,3/4*Math.PI*2,"#195089",pointX,pointY);
+     // 绘制两个中圆
+     pie(cxt,r/2,0,Math.PI*2,"#FF072A",pointX,pointY+r/2);
+     pie(cxt,r/2,0,Math.PI*2,"#195089",pointX,pointY-r/2);
+     // 绘制两个最小圆
+     pie(cxt,r/4,0,Math.PI*2,"#FF072A",pointX,pointY-r/2);
+     pie(cxt,r/4,0,Math.PI*2,"#195089",pointX,pointY+r/2);
+     cxt.closePath();
+     // 恢复状态
+     cxt.restore();
+ }
+ function initTaiji()
+ {
+     redrawTaiji();
+     setInterval(redrawTaiji,500);
+ }
+ initTaiji();
+		
+		
+	</script>	
+		
+	</body>
+</html>
